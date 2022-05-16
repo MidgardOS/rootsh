@@ -52,3 +52,5 @@ mechanism.
 
 %defattr(1777, root, root)
 %{_localstatedir}/log/rootsh/
+
+%changelog
