@@ -2,15 +2,21 @@
 
 %define _without_syslog 1
 
-Summary: Shell wrapper to log activity
-Name: rootsh
-Version: 1.6.4
-Release: 1
-License: GPL
-Group: System/Shells
-URL: https://github.com/jpschewe/rootsh
-Source: rootsh-%{version}.tar.gz
-
+Summary:    Shell wrapper to log activity
+Name:       rootsh
+Version:    1.6.4
+Release:    1
+License:    GPL-3.0-or-later
+Group:      System/Shells
+URL:        https://github.com/jpschewe/rootsh
+Source:     rootsh-%{version}.tar.gz
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: gcc
+BuildRequires: m4
+BuildRequires: glibc-devel
+BuildRequires: binutils
+BuildRequires: cpp
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
@@ -23,6 +29,7 @@ mechanism.
 %setup
 
 %build
+./bootstrap.sh
 %configure \
 %{!?_without_syslog:--enable-syslog="local5.notice"} \
 %{?_without_syslog:--disable-syslog} \
