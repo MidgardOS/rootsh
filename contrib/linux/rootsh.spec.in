@@ -2,14 +2,14 @@
 
 %define _without_syslog 1
 
-Summary: Shell wrapper to log activity
-Name: rootsh
-Version: @VERSION@
-Release: 1
-License: GPL
-Group: System/Shells
-URL: https://github.com/jpschewe/rootsh
-Source: rootsh-%{version}.tar.gz
+Summary:    Shell wrapper to log activity
+Name:       rootsh
+Version:    @VERSION@
+Release:    1
+License:    GPLv3
+Group:      System/Shells
+URL:        https://github.com/jpschewe/rootsh
+Source:     rootsh-%{version}.tar.gz
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
@@ -21,6 +21,7 @@ mechanism.
 
 %prep
 %setup
+./bootstrap.sh
 
 %build
 %configure \
