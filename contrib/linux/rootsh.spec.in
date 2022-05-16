@@ -10,7 +10,13 @@ License:    GPLv3
 Group:      System/Shells
 URL:        https://github.com/jpschewe/rootsh
 Source:     rootsh-%{version}.tar.gz
-
+BuildRequires: autoconf
+BuildRequires: automake
+BuildRequires: gcc
+BuildRequires: m4
+BuildRequires: glibc-devel
+BuildRequires: binutils
+BuildRequires: cpp
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
