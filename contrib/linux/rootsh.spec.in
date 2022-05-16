@@ -21,9 +21,9 @@ mechanism.
 
 %prep
 %setup
-./bootstrap.sh
 
 %build
+./bootstrap.sh
 %configure \
 %{!?_without_syslog:--enable-syslog="local5.notice"} \
 %{?_without_syslog:--disable-syslog} \
