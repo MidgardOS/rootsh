@@ -1,6 +1,6 @@
 # Upstream: Corey Henderson <corman@cormander.com>
 
-%define _without_syslog 1
+%define _with_syslog 1
 
 Summary:    Shell wrapper to log activity
 Name:       rootsh
@@ -31,8 +31,8 @@ mechanism.
 %build
 ./bootstrap.sh
 %configure \
-%{!?_without_syslog:--enable-syslog="local5.notice"} \
-%{?_without_syslog:--disable-syslog} \
+%{?_with_syslog:--enable-syslog="local5.notice"} \
+%{!?_with_syslog:--disable-syslog} \
 	--with-logdir="%{_localstatedir}/log/rootsh"
 %{__make} %{?_smp_mflags}
 
