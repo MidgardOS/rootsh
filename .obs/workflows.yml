@@ -1,0 +1,6 @@
+workflow:
+  steps:
+    - branch_package:
+        source_project: home:glgreenejr:rootsh
+        source_package: rootsh
+        target_project: releases
