@@ -6,7 +6,7 @@ Summary:    Shell wrapper to log activity
 Name:       rootsh
 Version:    1.6.4
 Release:    1
-License:    GPLv3
+License:    GPL-3.0-or-later
 Group:      System/Shells
 URL:        https://github.com/jpschewe/rootsh
 Source:     rootsh-%{version}.tar.gz
